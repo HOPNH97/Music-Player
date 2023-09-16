@@ -1,0 +1,234 @@
+body {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.player {
+    position: relative;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.player .icon-play {
+    display: block;
+}
+
+.player .icon-pause {
+    display: none;
+}
+
+.player.playing .icon-play {
+    display: none;
+}
+
+.player.playing .icon-pause {
+    display: block;
+}
+
+.dashboard {
+    background-color: var(--white-color);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    max-width: 480px;
+    padding: 16px;
+    border-bottom: 1px solid #ebebee;
+    border-radius: 10px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header h4 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+}
+
+header h2 {
+    color: var(--text-color);
+    font-size: 2rem;
+}
+/* CD */
+.cd {
+    display: flex;
+    width: var(--cd-thumb-height);
+    margin: auto;
+    /* background-color: rgba(211, 100, 100, 0.137); */
+}
+
+.cd-thumb {
+    /* background-image: url('/assets/img/cd2.png'); */
+    width: 100%;
+    border-radius: 50%;
+    padding-top: 100%;
+    background-color: #333;
+    background-size: cover;
+    /* margin: auto; */
+}
+/* Control btn */
+.control {
+    position: relative;
+    margin-top: 10px;
+}
+
+.control-item {
+    margin: 0 4px;
+}
+
+.control .control-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 20px 0 8px 0;
+}
+
+.control .btn {
+    color: #666;
+    font-size: 2rem;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+}
+
+.control .btn:hover:not(.btn-toggle-play) {
+    border-radius: 50%;
+    background-color: #d3d3d3;
+    cursor: pointer;
+}
+
+.control .btn-toggle-play {
+    font-size: 2.4rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 50%;
+    width: 58px;
+    height: 58px;
+}
+
+.control .btn-repeat.active {
+    color: var(--primary-color);
+}
+
+.control .btn-random.active {
+    color: var(--primary-color);
+}
+
+/* Duration bar */
+.time-left {
+    padding-right: 5px;
+    color: var(--text-color);
+}
+
+.time-right {
+    padding-left: 5px;
+    color: var(--text-color);
+}
+
+.duration-bar {
+}
+
+.progress {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    outline: #333;
+    width: 100%;
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s ease-in-out;
+    border-radius: 5px;
+    /* chỉnh màu */
+    accent-color: var(--primary-color);
+    background: transparent;
+}
+
+.progress:hover {
+    opacity: 1;
+}
+
+.progress::-webkit-slider-thumb {
+    /* xóa bỏ mặc định của trình duyệt */
+    -webkit-appearance: none;
+    /* xóa nền mặc định áp dụng đầu vào */
+    background: transparent;
+    appearance: none;
+    background-color: var(--primary-color);
+
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+}
+/* List songs */
+.playlist {
+    margin-top: 428px;
+    padding: 12px;
+}
+
+.song {
+    padding: 10px 16px;
+    background-color: var(--white-color);
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.song:active {
+    opacity: 0.8;
+}
+
+.song.active {
+    background-color: var(--primary-color);
+}
+
+.song.active .option,
+.song.active .author,
+.song.active .title {
+    color: var(--white-color);
+}
+
+.song .thumb {
+    background-image: url('/assets/img/cd2.png');
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 0 8px;
+}
+
+.song .body {
+    flex: 1;
+    padding: 0 16px;
+}
+
+.song .title {
+    font-size: 1.8rem;
+}
+
+.song .title {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
+.song .author {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    color: #888;
+}
+
+.song .option {
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
